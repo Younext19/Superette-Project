@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_margin="7dp"
+    >
+
+    <TextView
+        android:id="@+id/item_Marque"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:text="Marque"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:background="@drawable/rounded_textview"/>
+
+</LinearLayout>

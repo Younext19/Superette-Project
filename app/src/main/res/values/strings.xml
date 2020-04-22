@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Superette</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="rch">Recherche</string>
+    <string name="code_bar">Code Bar</string>
+    <string name="scan">Scan</string>
+    <string name="loading">Loading</string>
+    <string name="image_scan">Image Scan</string>
+    <string name="codeBare_text">Pour scanner un Code Barre placer la ligne rouge horizontalement sur le code-barres.</string>
+    <string name="ou_ecrire_dans_ce_case">Ou Ecrire dans cette case</string>
+</resources>

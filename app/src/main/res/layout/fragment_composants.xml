@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/foodbg2"
+    tools:context=".details.ComposantsFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/Id_IdCompos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@drawable/data"
+        android:layout_marginTop="120dp"
+        android:layout_centerHorizontal="true"
+        android:text="IdCompos" />
+    <TextView
+        android:id="@+id/Id_Colesterol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Id_IdCompos"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Colesterol" />
+    <TextView
+        android:id="@+id/Id_Fibre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Id_Colesterol"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Fibre" />
+    <TextView
+        android:id="@+id/Id_Calcium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Id_Fibre"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Calcium" />
+    <TextView
+        android:id="@+id/Id_Sucre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Id_Calcium"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Sucre" />
+    <TextView
+        android:id="@+id/Id_Energie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Id_Sucre"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+
+        android:text="Energie" />
+    <TextView
+        android:id="@+id/Id_Proteine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Id_Energie"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Proteine" />
+
+    <TextView
+        android:id="@+id/Id_Magnesium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Id_Proteine"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Magnesium" />
+    <TextView
+        android:id="@+id/Id_Sodium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Id_Magnesium"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Sodium" />
+    <TextView
+        android:id="@+id/Id_Sulphate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Id_Sodium"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Sulphate" />
+    <TextView
+        android:id="@+id/Id_Vitamine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Id_Sulphate"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Vitamine" />
+
+    <TextView
+        android:id="@+id/Id_Glucide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Id_Vitamine"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Glucide" />
+    <TextView
+        android:id="@+id/Id_Graisse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Id_Glucide"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Graisse" />
+    <TextView
+        android:id="@+id/Id_Sel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Id_Graisse"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Sel" />
+    <TextView
+        android:id="@+id/Id_Fer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Id_Sel"
+        android:background="@drawable/data"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="Fer" />
+    </RelativeLayout>
+</ScrollView>
+

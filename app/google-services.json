@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "722534969100",
+    "firebase_url": "https://superete-6cfec.firebaseio.com",
+    "project_id": "superete-6cfec",
+    "storage_bucket": "superete-6cfec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722534969100:android:287377ec1b84e12006a329",
+        "android_client_info": {
+          "package_name": "com.damso.superette"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722534969100-oagmee4qmdn3a5tvh6u5to02a4eli51d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.damso.superette",
+            "certificate_hash": "3180abff275a3a4602de29deb9129a1a0386c17f"
+          }
+        },
+        {
+          "client_id": "722534969100-vr7rhvvq5mpl07ie1o930fpfqvrk2cf7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPd4_P68YTaC86Rmus4tVPeg00_bqSVp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722534969100-vr7rhvvq5mpl07ie1o930fpfqvrk2cf7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

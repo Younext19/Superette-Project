@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/foodbg2"
+    tools:context=".details.ProduitsFragment"
+
+    >
+
+    <TextView
+        android:id="@+id/idProduit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/data"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true"
+        android:text=" Id Produits "
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+
+
+
+        />
+
+    <TextView
+        android:id="@+id/marque"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idProduit"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/data"
+        android:text="Marque"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:id="@+id/Nom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/marque"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/data"
+        android:text="Nom"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/Poids"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/data"
+        android:layout_below="@id/Nom"
+        android:text="Poids"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/Volume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/data"
+        android:layout_below="@id/Poids"
+        android:text="Volume"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/idProducteur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Volume"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/data"
+        android:text="Id Producteur"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/Prix"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/data"
+        android:layout_below="@id/idProducteur"
+        android:text="Prix"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        />
+</RelativeLayout>
