@@ -23,8 +23,8 @@ public class ProduitsFragment extends Fragment {
     }
 
     int position=0;
-    String id_produit,marque,nom,poids,volume,prix,barcode,id_producteur;
-    TextView IDPRODUIT,MARQUE,NOM,POIDS,VOLUME,IDPRODUCTEUR,PRIX;
+    String id_produit,marque,nom,poids,volume,prix,barcode,id_producteur,bcode;
+    TextView IDPRODUIT,MARQUE,NOM,POIDS,VOLUME,IDPRODUCTEUR,PRIX,BCODE;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class ProduitsFragment extends Fragment {
         VOLUME = view.findViewById(R.id.Volume);
         PRIX = view.findViewById(R.id.Prix);
         IDPRODUCTEUR = view.findViewById(R.id.idProducteur);
+        BCODE = view.findViewById(R.id.Bar_code);
 
 
 //        id_produit = bundle.getString("IdProduit");
@@ -48,6 +49,7 @@ public class ProduitsFragment extends Fragment {
         prix = getActivity().getIntent().getStringExtra("Prix");
         barcode = getActivity().getIntent().getStringExtra("Barcode");
         id_producteur = getActivity().getIntent().getStringExtra("IdProducteur");
+
 
 
 
@@ -71,6 +73,7 @@ public class ProduitsFragment extends Fragment {
         VOLUME.setText("Volume : "+volume);
         PRIX.setText("Prix : "+prix);
         IDPRODUCTEUR.setText("Id Producteur : "+id_producteur);
+        BCODE.setText("Code Bar : "+barcode);
 
     }
 }

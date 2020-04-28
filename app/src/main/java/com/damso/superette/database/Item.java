@@ -2,6 +2,9 @@ package com.damso.superette.database;
 
 public class Item {
     String Marque;
+
+
+
     String IdProduit;
     String Nom;
     String Poid;
@@ -32,6 +35,7 @@ public class Item {
     String Toxic;
     String Status;
     String Description;
+
 
 
     public String getMarque() {
@@ -256,4 +260,7 @@ public class Item {
     public void setDescription(String description) {
         this.Description = description;
     }
+
+
+
 }

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addact">
+<!-- HNA NZIDO DATA TSEMA KAYEN LES EDITEXT -->
+    <TextView
+        android:id="@+id/marque_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Entrez La Marque"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="30dp"
+
+        />
+    <EditText
+        android:id="@+id/marque_input"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/marque_id"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/inputs"
+        android:inputType="text"
+        android:padding="13dp"
+        android:layout_alignParentLeft="true"
+        />
+    <Button
+        android:id="@+id/send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/marque_input"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:text="Ajouter Ce Produits"
+        />
+    <Button
+        android:id="@+id/search_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/send"
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:text="Chercher le Produits"
+        />
+
+</RelativeLayout>

@@ -17,6 +17,19 @@
 
     </item>
     <item
+        android:title="Ajouter"
+        android:id="@+id/main_add_option"
+        app:showAsAction="never"
+        >
+    </item>
+    <item
+        android:title="Objets Ajouté"
+        android:id="@+id/main_new_option"
+        app:showAsAction="never"
+        >
+
+    </item>
+    <item
         android:title="Details"
         android:id="@+id/main_details_option"
         app:showAsAction="never"

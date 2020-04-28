@@ -54,10 +54,15 @@ public class HomeFragment extends Fragment {
                     public boolean onMenuItemClick(MenuItem item) {
                         if(item.getItemId()== R.id.main_about_option){
                             getActivity().finish();
-
                         }
                         if(item.getItemId()== R.id.main_search_option){
                             SendUserToScannerFrag();
+                        }
+                        if(item.getItemId() == R.id.main_add_option){
+                            SendToAddActivity();
+                        }
+                        if (item.getItemId()== R.id.main_new_option){
+                            SendToNew();
                         }
                         if(item.getItemId()== R.id.main_details_option){
                             SendUserToDetailFrag();
@@ -78,31 +83,11 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    //____________MENU OPTIONS ITEM SELECTED__________________
-   /* @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        super.onOptionsItemSelected(item);
+    private void SendToNew() {
+        Intent intent = new Intent(getActivity(), newobj.class);
+        startActivity(intent);
+    }
 
-        if(item.getItemId()== R.id.main_about_option){
-            getActivity().finish();
-
-        }
-        if(item.getItemId()== R.id.main_search_option){
-            SendUserToScannerFrag();
-        }
-        if(item.getItemId()== R.id.main_details_option){
-            SendUserToDetailFrag();
-        }
-        if(item.getItemId()== R.id.main_Logout_option){
-            SendUserToLoginActivity();
-        }
-        if(item.getItemId()== R.id.main_quit_option){
-            getActivity().finish();
-        }
-
-        return true;
-    }*/
-    //-------------------FINISHED MENU OPTIONS---------------
 
     //_____________________Go To Login Activity___________________
     private void SendUserToLoginActivity() {
@@ -134,5 +119,9 @@ public class HomeFragment extends Fragment {
         Fragment fragment = new ScannerFragment();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
+    }
+    private void SendToAddActivity(){
+        Intent intent = new Intent(getActivity(), addact.class);
+        startActivity(intent);
     }
 }

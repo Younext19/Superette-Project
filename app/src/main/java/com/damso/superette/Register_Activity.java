@@ -1,9 +1,11 @@
 package com.damso.superette;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -23,47 +26,36 @@ import java.util.List;
 
 
 import com.damso.superette.database.DatabaseHelper;
-
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class Register_Activity extends AppCompatActivity {
     EditText mail, pw1, pw2;
     Button allergie, Chronique,CreateAccountButton;
     CheckBox ShowPassword;
+    private FirebaseAuth mAuth;
+    private ProgressDialog loadingbar;
+    private DatabaseReference RootRef;
     private TextView AlreadyHaveAccountLink;
     DatabaseHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        mAuth = FirebaseAuth.getInstance();
+        RootRef = FirebaseDatabase.getInstance().getReference();
         initialise();
-        db = new DatabaseHelper(this);
+
+
         CreateAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String s1 = mail.getText().toString();
-                String s2 = pw1.getText().toString();
-                String s3 = pw2.getText().toString();
-                if(s1.equals("") || s2.equals("") || s3.equals("")){
-                    Toast.makeText(Register_Activity.this, "Fields Are Empty", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    if (s2.equals(s3)){
-                        Boolean checkmail = db.checkmail(s1);
-                        if(checkmail==true){
-                            Boolean insert = db.insert(s1,s2);
-                            if (insert == true){
-                                Toast.makeText(getApplicationContext(), "Registered Succesfully", Toast.LENGTH_SHORT).show();
-                                SendUserToMainActivity();
-                            }
-                        }
-                        else{
-                            Toast.makeText(getApplicationContext(), "Email Already Exists", Toast.LENGTH_SHORT).show();
-                        }
-                    }else{
-                        Toast.makeText(getApplicationContext(), "Password Does Not Match", Toast.LENGTH_SHORT).show();
-                    }
-                }
+                CreateNewAccount();
             }
         });
 
@@ -78,11 +70,11 @@ public class Register_Activity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     pw1.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                    pw2.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+
                 }
                 else{
                     pw1.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                    pw2.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
                 }
             }
         });
@@ -252,9 +244,6 @@ public class Register_Activity extends AppCompatActivity {
     private void initialise() {
         mail = findViewById(R.id.register_mail);
         pw1 = findViewById(R.id.register_password);
-        pw2 = findViewById(R.id.register_confirm_password);
-
-
         CreateAccountButton=findViewById(R.id.register_final);
         AlreadyHaveAccountLink = findViewById(R.id.haveit);
         ShowPassword = findViewById(R.id.Password_Checkbox);
@@ -278,5 +267,40 @@ public class Register_Activity extends AppCompatActivity {
         startActivity(LoginIntent);
     }
     //--------------Finished Send User TO LOGIN-------------------
+    private void CreateNewAccount() {
+        String email = mail.getText().toString();
+        String Password = pw1.getText().toString();
 
+        if(TextUtils.isEmpty(email)){
+            Toast.makeText(this, "Please Enter Mail", Toast.LENGTH_SHORT).show();
+        }
+        if(TextUtils.isEmpty(Password)){
+            Toast.makeText(this, "Please Enter Password", Toast.LENGTH_SHORT).show();
+        }
+        else{
+
+            mAuth.createUserWithEmailAndPassword(email, Password)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                String currentUserID = mAuth.getCurrentUser().getUid();
+                                RootRef.child("Users").child(currentUserID).setValue("");
+
+
+
+                                SendUserToMainActivity();
+                                Toast.makeText(Register_Activity.this, "Created Successfully", Toast.LENGTH_SHORT).show();
+
+                            }
+                            else
+                            {
+                                String message=task.getException().toString();
+                                Toast.makeText(Register_Activity.this, "Error : "+message, Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+                    });
+        }
+    }
 }

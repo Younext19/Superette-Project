@@ -98,4 +98,16 @@
         android:textStyle="bold"
         android:textColor="#000"
         />
+    <TextView
+        android:id="@+id/Bar_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/data"
+        android:layout_below="@id/Prix"
+        android:text="Code Bar : "
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#000"/>
 </RelativeLayout>

@@ -24,11 +24,16 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     Toolbar mtoolbar;
+    private FirebaseUser currentUser;
+    private FirebaseAuth mAuth;
+    private DatabaseReference Rootref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mAuth = FirebaseAuth.getInstance();
+        currentUser = mAuth.getCurrentUser();
+        Rootref = FirebaseDatabase.getInstance().getReference();
 
 
         //call initialise function
@@ -48,6 +53,28 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new HomeFragment()).commit();
+    }
+
+    private void VerifyUserExistance() {
+        String currentUserID= mAuth.getCurrentUser().getUid();
+        Rootref.child("Users").child(currentUserID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if((dataSnapshot.child("name").exists())){
+                    Toast.makeText(MainActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    SendUserToLoginActivity();
+                    //Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
     //__________CREATE OPTIONS MENU______________
     @Override
@@ -119,10 +146,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     //__________________When Start APP______if User exists or no______________
-    @Override
     protected void onStart() {
         super.onStart();
-
+        if(currentUser==null){
+            //Go To Login Activity
+            SendUserToLoginActivity();
+        }
+        else{
+            VerifyUserExistance();
+        }
     }
     //-----------------FINISHED WHEN START APP-------------------
 
